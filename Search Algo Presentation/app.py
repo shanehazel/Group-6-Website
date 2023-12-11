@@ -1,15 +1,36 @@
-from flask import Flask, render_template, request
 
-app = Flask(__name__, static_url_path = '', static_folder = 'c:\Flask_Intro\static')
+from flask import Flask, render_template, request
+import timeit
+from flask import Flask, request, jsonify, render_template
+from exponential_search import exponential_search, exponential_search_wrapper
+from binary_search import binary_search, binary_search_wrapper
+from interpolation_search import interpolation_search, interpolation_search_wrapper
+from jump_search import jump_search, jump_search_wrapper
+from linear_search import linear_search, linear_search_wrapper
+from ternary_search import ternary_search, ternary_search_wrapper
+
+app = Flask(__name__)
 
 @app.route('/')
 def index():
     return render_template('index.html')
 
+@app.route('/index')
+def works():
+    return render_template('index.html')
+
+@app.route('/profile')
+def profile():  
+    return render_template('profile.html')
+
+@app.route('/contact')
+def contact():
+    return "Contact Page. please create me an html page with dummy contact info"
+
 @app.route('/one', methods=["GET", "POST"])
 def one():
     
-    numbers = range(1, 10001)
+    numbers = range(1, 101)
     test_data = ", ".join(map(str, numbers))
     #print(test_data)
     if request.method == "POST":
@@ -60,7 +81,7 @@ def one():
 @app.route('/two', methods=["GET", "POST"])
 def two():
     
-    numbers = range(1, 10001)
+    numbers = range(1, 1001)
     test_data = ", ".join(map(str, numbers))
     #print(test_data)
     if request.method == "POST":
@@ -178,6 +199,8 @@ def search():
 @app.route('/results')
 def results():
     return render_template('results.html')
+
+
 
 
 if __name__ == "__main__":
