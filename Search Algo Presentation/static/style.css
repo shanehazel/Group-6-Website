@@ -10,7 +10,7 @@
     min-height: 15vh;
     padding: 10px 10%;
     overflow: hidden;
-    background-color:#6a1765;
+    background-color: #65224c;
     box-sizing: border-box;
     
 }
@@ -124,14 +124,14 @@ nav ul li a{
 }
 
 .content{
-    color: white;
-    font-weight: bold;
-    border: 3px solid #f1f1f1;
-    position: relative;
-    bottom:10% 10px;
-    width: 100%;
-    padding: 10px;
+    background-color: #e672b63e;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0.2);
     text-align: center;
+    font-size: 24px;
+    font-weight: bold;
 }
 .content{
     background-color: #e672b63e;
@@ -142,8 +142,6 @@ nav ul li a{
     text-align: center;
     font-size: 24px;
     font-weight: bold;
-    padding: 10px;
-    text-align: center;
 }
 .content h1{
     font-size: 70px;

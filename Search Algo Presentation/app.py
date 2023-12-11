@@ -1,3 +1,4 @@
+
 from flask import Flask, render_template, request
 import timeit
 from flask import Flask, request, jsonify, render_template
@@ -8,12 +9,23 @@ from jump_search import jump_search, jump_search_wrapper
 from linear_search import linear_search, linear_search_wrapper
 from ternary_search import ternary_search, ternary_search_wrapper
 
-
-app = Flask(__name__, static_url_path = '', static_folder = 'c:\Flask_Intro\static')
+app = Flask(__name__)
 
 @app.route('/')
 def index():
     return render_template('index.html')
+
+@app.route('/index')
+def works():
+    return render_template('index.html')
+
+@app.route('/profile')
+def profile():  
+    return render_template('profile.html')
+
+@app.route('/contact')
+def contact():
+    return "Contact Page. please create me an html page with dummy contact info"
 
 @app.route('/one', methods=["GET", "POST"])
 def one():
@@ -164,7 +176,7 @@ def three():
             return render_template("three.html", error="Invalid input. Ensure the array and target are integers.")
     
 
-    return render_template("three.html.html",test_data=test_data)
+    return render_template("three.html",test_data=test_data)
 
 @app.route("/search", methods=["POST"])
 def search():
@@ -187,6 +199,8 @@ def search():
 @app.route('/results')
 def results():
     return render_template('results.html')
+
+
 
 
 if __name__ == "__main__":
