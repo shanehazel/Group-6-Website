@@ -15,17 +15,17 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route('/index')
+@app.route('/works')
 def works():
-    return render_template('index.html')
+    return render_template('works.html')
 
 @app.route('/profile')
 def profile():  
     return render_template('profile.html')
 
-@app.route('/contact')
+@app.route('/home')
 def contact():
-    return "Contact Page. please create me an html page with dummy contact info"
+    return render_template('home.html')
 
 @app.route('/one', methods=["GET", "POST"])
 def one():

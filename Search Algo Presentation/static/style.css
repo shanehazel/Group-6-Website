@@ -64,9 +64,6 @@ nav{
     justify-content: space-between;
     background-position-x: 0%;
     min-height: max-content;
-
-    
-
 }
 
 .logo{
@@ -86,6 +83,11 @@ nav ul li a{
     font-weight: 500;
 }
 
+/* add this hover */
+nav ul li a:hover {
+    color: coral;
+}
+
 .login-btn{
     text-decoration: none;
     color:#ffffff;
@@ -93,37 +95,9 @@ nav ul li a{
     font-weight: 500;
 }
 
-.btn{
-    display: inline-block;
-    background-color: #f70bb4;
-    color: #ffffff;
-    padding: 10px 20px;
-    text-decoration: none;
-    border: none;
-    border-radius: 5px;
-    margin: 10px;
-    cursor: pointer;
-    text-align: center;
-    font-weight: bold;
-    font-size: 18px;
+/* remove the btn and btn1 in this part */
 
-}
-
-.btn1{
-    display: inline-block;
-    text-decoration: none;
-    padding: 14px 40px;
-    color:#ffffff;
-    background-image: linear-gradient(45deg, rgb(226, 70, 70),rgb(158, 6, 6));
-    font-size: larger;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    border-radius:  30px;
-    border-top-right-radius: 0;
-    transition: 0.5s;
-
-}
-
-.content{
+.content{ 
     background-color: #e672b63e;
     border: 1px solid #ccc;
     padding: 20px;
@@ -132,8 +106,13 @@ nav ul li a{
     text-align: center;
     font-size: 24px;
     font-weight: bold;
-}
-.content{
+    /* add this 3 */
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+} 
+/*.content{
     background-color: #e672b63e;
     border: 1px solid #ccc;
     padding: 20px;
@@ -142,7 +121,8 @@ nav ul li a{
     text-align: center;
     font-size: 24px;
     font-weight: bold;
-}
+} */
+
 .content h1{
     font-size: 70px;
     color: #ffffff;
