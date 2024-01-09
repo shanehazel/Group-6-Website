@@ -302,3 +302,72 @@ nav ul li a:hover {
 		font-size: 3.2rem;
 	}
 }
+
+/* css in work page */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Space Grotesk', sans-serif;
+    text-decoration: none;
+}
+.center {
+    text-align: center;
+    margin-top: 2rem
+}
+
+body {
+    background: radial-gradient(#65224c, #000000);
+    color: #fff;
+}
+
+.work-container {
+    width: 100%;
+    max-width: 1350px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, auto));
+    align-items: center;
+    gap: 2rem;
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.work-details {
+    padding: 16px;
+    background: #770b46;
+    border-radius: 15px;
+    transition: all .38s ease;
+}
+
+.work-details h2 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.work-details p {
+    font-size: 15px;
+    font-weight: 600;
+    color: #b7b4bb;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.work-details:hover {
+    transform: translateY(-10px);
+    cursor: pointer;
+}
+
+@media (max-width: 1240px) {
+    .work-container {
+        width: 100%;
+        height: auto;
+        padding: 90px 2%;
+    }
+
+    .work-details h2 {
+        font-size: 3.2rem;
+    }
+}
