@@ -1,0 +1,241 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.head{
+    
+    min-height: 15vh;
+    padding: 10px 10%;
+    overflow: hidden;
+    background-color: #65224c;
+    box-sizing: border-box;
+    
+}
+.hero{
+    width: 100%;
+    display: flex;
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-position: 50%;
+    background-size: cover;
+    height: 100%; 
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+    padding: 5px 10%;
+    overflow: hidden;
+    position: relative;
+    
+}
+.hero1{
+    width: 100%;
+    display: flex;
+    min-height: 100vh;
+    background-position: 50%;
+    background-size: cover;
+    height: 100%; 
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+    padding: 5px 10%;
+    overflow: hidden;
+    position: relative;
+    
+}
+
+.bg-pic{
+    background-image: url(spider.jpg);
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    min-width: 100%;
+    min-height: 100%;
+}
+
+nav{
+    padding: 10x;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-position-x: 0%;
+    min-height: max-content;
+
+    
+
+}
+
+.logo{
+    width: 75px;
+}
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 15px;
+
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: #ffffff;
+    font-size: large;
+    font-weight: 500;
+}
+
+.login-btn{
+    text-decoration: none;
+    color:#ffffff;
+    margin-right: 100px;
+    font-weight: 500;
+}
+
+.btn{
+    display: inline-block;
+    background-color: #f70bb4;
+    color: #ffffff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+
+}
+
+.btn1{
+    display: inline-block;
+    text-decoration: none;
+    padding: 14px 40px;
+    color:#ffffff;
+    background-image: linear-gradient(45deg, rgb(226, 70, 70),rgb(158, 6, 6));
+    font-size: larger;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-radius:  30px;
+    border-top-right-radius: 0;
+    transition: 0.5s;
+
+}
+
+.content{
+    background-color: #e672b63e;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0.2);
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+.content{
+    background-color: #e672b63e;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0.2);
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+.content h1{
+    font-size: 70px;
+    color: #ffffff;
+    bottom: 0;
+}
+
+.content p{
+    margin: 10px 0 30px;
+    color: #f9f9f9 ;
+    animation-delay: 0.5s;
+    bottom: 0;
+}
+
+.content .btn{
+    padding: 15px 80px;
+    font-size: 16px;
+    animation-delay: 1s;
+}
+
+.btn:hover{
+    border-top-right-radius: 30px;
+}
+
+.feature-png{
+    width: 530px;
+    padding: 10px;
+    position: relative;
+    box-sizing: content-box;
+    background-color: whitesmoke;
+    bottom: 0;
+}
+.feature-png.Anim{
+    animation-delay: 1s;
+}
+
+.Anim{
+    opacity: 0;
+    transform: translateY(30px);
+    animation: moveup 0.5s linear forwards;
+}
+@keyframes moveup{
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.profile{
+    background-color: floralwhite; /* Fallback color */
+    color: rgb(0, 0, 0);
+    border: 1px solid #000000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+    padding: 20px;
+    
+}
+
+.profile-pic{
+    width: 100px;
+    height: auto;
+    width: 10px;
+    position: relative;
+    left: 0;
+    padding: 10px;
+
+}
+
+.profile-dets{
+    padding: 20px;
+    position: absolute;
+    left: 25%;
+    top: 10%;
+    text-align: justify;
+}
+
+.profile-name{
+    font-size: x-large;
+    text-decoration-line: underline;
+}
+
+.profile-description{
+    font-size: medium;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.profile-motto{
+    font: xx-large;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+}
+

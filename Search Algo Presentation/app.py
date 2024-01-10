@@ -27,6 +27,10 @@ def profile():
 def contact():
     return render_template('home.html')
 
+@app.route('/searchAlgorithm')
+def searchAlgorithm():
+    return render_template('searchAlgorithm.html')
+
 @app.route('/one', methods=["GET", "POST"])
 def one():
     
