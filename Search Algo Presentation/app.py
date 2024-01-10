@@ -8,6 +8,8 @@ from interpolation_search import interpolation_search, interpolation_search_wrap
 from jump_search import jump_search, jump_search_wrapper
 from linear_search import linear_search, linear_search_wrapper
 from ternary_search import ternary_search, ternary_search_wrapper
+from flask import Flask, render_template, request
+from InfixPostfix import infix_to_postfix  
 
 app = Flask(__name__)
 
@@ -204,6 +206,18 @@ def search():
 def results():
     return render_template('results.html')
 
+@app.route('/infix_postfix', methods=['GET', 'POST'])
+def infix_postfix():
+    result = None
+    steps = None
+
+    if request.method == 'POST':
+        infix_expression = request.form['infixExpression']
+        result, steps = infix_to_postfix(infix_expression)
+
+    return render_template('infix_postfix.html', result=result, steps=steps)
+
+
 @app.route('/queue_dequeue')
 def queue_deque():  
     return render_template('q_dq.html')\
@@ -226,7 +240,6 @@ def queue_operations():
                 Dequeue = queue.pop(0)
 
     return render_template('q_dq.html', Enqueue=queue, Dequeue=Dequeue)
-
 
 if __name__ == "__main__":
     app.run(debug=True)

@@ -1,0 +1,61 @@
+<!-- templates/infix_postfix.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infix to Postfix Conversion</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+<header class="head">
+    <nav>
+        <img src="/static/spidong.png" class="logo">
+        <ul>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/profile">Profile</a></li>
+            <li><a href="/works">Works</a></li>
+        </ul>
+    </nav>
+</header>
+<body>
+    <div class="hero">
+        <section class="team">
+            <br>
+            <br>
+            <br>
+            <section class="team">
+                <div class="content">
+                    <form action="/infix_postfix" method="post">
+                        <label for="infixExpression">Enter an infix expression:</label>
+                        <input type="text" id="infixExpression" name="infixExpression" placeholder="Enter infix expression">
+                        <br>
+                        <br>
+                        <input type="submit" value="Convert to Postfix">
+                    </form>
+                    <!-- Display Infix to Postfix result or steps -->
+                    <br>
+                    <br>
+                    <div>
+                        <div>
+                            <div>
+                                <div>
+                                    {% if result %}
+                                    <p>Converted Postfix Expression: {{ result }}</p>
+                                    {% endif %}
+                                    {% if steps %}
+                                    <p>Conversion Steps:</p>
+                                    {% for step in steps %}
+                                        <p>{{ step }}</p>
+                                    {% endfor %}
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </body>
+</html>
