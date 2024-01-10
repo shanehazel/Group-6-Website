@@ -204,7 +204,28 @@ def search():
 def results():
     return render_template('results.html')
 
+@app.route('/queue_dequeue')
+def queue_deque():  
+    return render_template('q_dq.html')\
 
+
+queue = []
+@app.route('/queue_dequeue', methods=['GET', 'POST'])
+def queue_operations():
+    Enqueue = None
+    Dequeue = None
+
+    if request.method == 'POST':
+
+        if request.form.get('enqueue', ''):
+            data = str(request.form.get('inputString', ''))
+            queue.append(data)
+
+        elif request.form.get('dequeue', ''):
+            if queue:
+                Dequeue = queue.pop(0)
+
+    return render_template('q_dq.html', Enqueue=queue, Dequeue=Dequeue)
 
 
 if __name__ == "__main__":

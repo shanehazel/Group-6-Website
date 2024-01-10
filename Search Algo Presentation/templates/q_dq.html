@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Search Algorithms Comparison</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<header class="head">
+  <nav>
+    <img src="/static/spidong.png" class="logo">
+    <ul>
+      <li><a href="/home">Home</a></li>
+      <li><a href="/profile">Profile</a></li>
+      <li><a href="/works">Works</a></li>
+        
+    </ul>
+  </nav>
+</header>
+<body>
+    <div class="hero">
+    <section class="team">
+      <br>
+      <br>
+      <br>
+      <div class="content">
+        <form action="/queue_dequeue" method="post" >
+            <label for="inputString" class="Anim" >  Enter a string:     </label>
+            <input type="text" id="inputString" name="inputString" placeholder="Enter any key">
+            <br>    
+            <br>
+            <br>
+            <input type="submit" id ="enequeue" name="enqueue" value="ENQUEUE"  class="btn">
+            <input type="submit" id ="dequeue" name="dequeue" value="DEQUEUE" class="btn">
+            </form>
+            <br>
+            <br>
+            {% if Enqueue %}
+            <p class="Anim">Enqueue: {{ " -> ".join(Enqueue) }}</p>
+            {% endif %}
+            {% if Dequeue %}
+            <p class="Anim" > Dequeue: {{ Dequeue }}</p>
+            {% endif %}
+      </div>
+      <br>
+      <br>
+      <br>
+      
+        <br>
+        <br>
+      </div>
+      
+    
+    
+    </div>
+    
+      
+      
+    </section>
+  </body>
+
