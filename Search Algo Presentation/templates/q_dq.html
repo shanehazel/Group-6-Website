@@ -32,13 +32,13 @@
             <br>    
             <br>
             <br>
-            <input type="submit" id ="enequeue" name="enqueue" value="ENQUEUE"  class="btn">
-            <input type="submit" id ="dequeue" name="dequeue" value="DEQUEUE" class="btn">
+            <input type="submit" id ="enequeue" name="enqueue" value="ENQUEUE"  class="try-it-button">
+            <input type="submit" id ="dequeue" name="dequeue" value="DEQUEUE"class="try-it-button">
             </form>
             <br>
             <br>
             {% if Enqueue %}
-            <p class="Anim">Enqueue: {{ " -> ".join(Enqueue) }}</p>
+            <p class="Anim">Enqueue: {{ " \n ".join(Enqueue) }}</p>
             {% endif %}
             {% if Dequeue %}
             <p class="Anim" > Dequeue: {{ Dequeue }}</p>

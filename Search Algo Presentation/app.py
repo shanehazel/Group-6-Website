@@ -33,6 +33,11 @@ def contact():
 def searchAlgorithm():
     return render_template('searchAlgorithm.html')
 
+@app.route('/hash_algo')
+def hash_algo():
+    return render_template('hash.html')
+
+
 @app.route('/one', methods=["GET", "POST"])
 def one():
     
@@ -240,6 +245,70 @@ def queue_operations():
                 Dequeue = queue.pop(0)
 
     return render_template('q_dq.html', Enqueue=queue, Dequeue=Dequeue)
+
+# Hash table initialization
+hash_table = [[] for _ in range(32)]
+
+# Hash functions
+def hash_function_1(k, m):
+    return k % m
+
+def hash_function_2(k, m):
+    return ((1731 * k + 520123) % 524287) % m
+
+# Default hash method of Python
+def hash_function_3(s, m):
+    return hash(s) % m
+
+# Function to insert a key into the hash table
+def insert_key(key, hash_function, m):
+    k = sum(ord(char) for char in key)
+    index = hash_function(k, m)
+    hash_table[index].insert(0, key)
+
+# Function to delete a key from the hash table
+def delete_key(key, hash_function, m):
+    k = sum(ord(char) for char in key)
+    index = hash_function(k, m)
+    if key in hash_table[index]:
+        hash_table[index].remove(key)
+
+# Function to handle the input commands
+def process_commands(commands, hash_function, m):
+    for command in commands:
+        if command.startswith("del "):
+            delete_key(command[4:], hash_function, m)
+        else:
+            insert_key(command, hash_function, m)
+
+
+# Function to generate the output format
+def generate_output():
+    output = []
+    for i, slot in enumerate(hash_table):
+        output.append(f"{i}: {slot}")
+        output.append(f"\n")
+    return output
+
+
+@app.route('/hash_algo', methods=['GET', 'POST'])
+def hash_algo_form():
+    if request.method == 'POST':
+        selected_hash_function = request.form['hash_function']
+        num_commands = int(request.form['num_commands'])
+        commands = request.form['commands'].split('\n')
+        
+        if selected_hash_function == 'hash_function_1':
+            process_commands(commands, hash_function_1, 32)
+        elif selected_hash_function == 'hash_function_2':
+            process_commands(commands, hash_function_2, 32)
+        elif selected_hash_function == 'hash_function_3':
+            process_commands(commands, hash_function_3, 32)
+
+    output = generate_output()
+    return render_template('hash.html', output=output)
+
+
 
 if __name__ == "__main__":
     app.run(debug=True)

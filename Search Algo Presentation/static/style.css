@@ -112,6 +112,23 @@ nav ul li a:hover {
     left: 50%;
     transform: translate(-50%, -50%);
 } 
+
+.content1{
+    background-color: #e672b63e;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0.2);
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    /* add this 3 */
+    position: absolute;
+    top: 150px;
+    left: 50px;
+    right: 50px
+    
+}
 /*.content{
     background-color: #e672b63e;
     border: 1px solid #ccc;
@@ -399,4 +416,10 @@ body {
     .work-details h2 {
         font-size: 3.2rem;
     }
+}
+
+.textArea{
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
 }
