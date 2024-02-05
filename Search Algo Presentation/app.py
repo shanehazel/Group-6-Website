@@ -225,7 +225,7 @@ def infix_postfix():
 
 @app.route('/queue_dequeue')
 def queue_deque():  
-    return render_template('q_dq.html')\
+    return render_template('q_dq.html')
 
 
 queue = []
@@ -307,7 +307,6 @@ def hash_algo_form():
 
     output = generate_output()
     return render_template('hash.html', output=output)
-
 
 
 if __name__ == "__main__":
