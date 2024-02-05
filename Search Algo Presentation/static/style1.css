@@ -239,4 +239,54 @@ nav ul li a{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
 }
+.route_title {
+    position: relative;
+    top: 50%;
+    left: 30%;
+}
 
+.result-container {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f70bb4;
+    border: 1px solid #f70bb4;
+    border-radius: 5px;
+}
+
+.result-heading {
+    color:#ffffff;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.route-list {
+    list-style: none;
+    padding: 0;
+    display: flex;  /* Display the list horizontally */
+    flex-wrap: wrap;
+    gap: 5px;  /* Add some space between list items */
+}
+
+.route-list-item {
+    padding: 5px;
+    border: 1px solid #f70bb4;
+    border-radius: 5px;
+    background-color: #f70bb4;
+    color: #fff;
+    display: flex;  /* Display each item as a flex container */
+    align-items: center;  /* Center content vertically */
+}
+
+.route-list-item:not(:last-child)::after {
+    content: '\2192'; /* Unicode arrow right character */
+    margin-left: 5px;  /* Add some space between item and arrow */
+    font-size: 18px;
+    color: #f70bb4;
+}
+
+.distance {
+    font-size: 16px;
+    font-weight: bold;
+    color: #f70bb4;
+    margin-top: 10px;
+}
