@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Search Algorithms Comparison</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<header class="head">
+  <nav>
+    <img src="/static/spidong.png" class="logo">
+    <ul>
+      <li><a href="/home">Home</a></li>
+      <li><a href="/profile">Profile</a></li>
+      <li><a href="/works">Works</a></li>
+    </ul>
+  </nav>
+</header>
+<form action="/graph_algo" method="post">
+    <label for="start_station">Enter a string:</label>
+    <input type="text" id="start_station" name="start_station" placeholder="Boni">
+    <label for="end_station">Enter a string:</label>
+    <input type="text" id="end_station" name="end_station" placeholder="Boni">
+    <input type="submit" value="Enter" class="try-it-button">
+
+<br>
+<br>
+{% if result %}
+  <p class="Anim">{{ result }}</p>
+  <p class="Anim">{{ result1 }}</p>
+  <p class="Anim">{{ result2 }}</p>
+
+{% endif %}
