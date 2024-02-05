@@ -18,18 +18,128 @@
     </ul>
   </nav>
 </header>
-<form action="/graph_algo" method="post">
-    <label for="start_station">Enter a string:</label>
-    <input type="text" id="start_station" name="start_station" placeholder="Boni">
-    <label for="end_station">Enter a string:</label>
-    <input type="text" id="end_station" name="end_station" placeholder="Boni">
-    <input type="submit" value="Enter" class="try-it-button">
-
+<div class="mb-3">
+  <label for="start_station" class="form-label">Starting Station</label>
+  <select class="form-select mb-3" id="start_station" name="start_station">
+    <option value="Choose Station">Choose Station</option>
+      <!-- Add LRT 2 stations -->
+      <option value="Recto">Recto</option>
+      <option value="Legarda">Legarda</option>
+      <option value="Pureza">Pureza</option>
+      <option value="V. Mapa">V. Mapa</option>
+      <option value="J. Ruiz">J. Ruiz</option>
+      <option value="Gilmore">Gilmore</option>
+      <option value="Betty Go">Betty Go</option>
+      <option value="Cubao LRT Line">Cubao LRT Line</option>
+      <option value="Anonas">Anonas</option>
+      <option value="Katipunan">Katipunan</option>
+      <option value="Santolan">Santolan</option>
+      <option value="Marikina Pasig">Marikina Pasig</option>
+      <option value="Antipolo">Antipolo</option>
+      <!-- Add LRT 1 stations -->
+      <option value="Baclaran">Baclaran</option>
+      <option value="Edsa">Edsa</option>
+      <option value="Libertad">Libertad</option>
+      <option value="Gil Puyat">Gil Puyat</option>
+      <option value="Vito Cruz">Vito Cruz</option>
+      <option value="Quirino">Quirino</option>
+      <option value="Pedro Gil">Pedro Gil</option>
+      <option value="United Nations Avenue">United Nations Avenue</option>
+      <option value="Central Terminal">Central Terminal</option>
+      <option value="Carriedo">Carriedo</option>
+      <option value="Doroteo Jose">Doroteo Jose</option>
+      <option value="Bambang">Bambang</option>
+      <option value="Tayuman">Tayuman</option>
+      <option value="Blumentritt">Blumentritt</option>
+      <option value="Abad Santos">Abad Santos</option>
+      <option value="R. Papa">R. Papa</option>
+      <option value="5th Avenue">5th Avenue</option>
+      <option value="Monumento">Monumento</option>
+      <option value="Balintawak">Balintawak</option>
+      <option value="Roosevelt">Roosevelt</option>
+      <!-- Add MRT stations -->
+      <option value="North Ave">North Ave</option>
+      <option value="Quezon Ave">Quezon Ave</option>
+      <option value="GMAKamuning">GMAKamuning</option>
+      <option value="Cubao MRT Line">Cubao MRT Line</option>
+      <option value="Santolan-Annapolis">Santolan-Annapolis</option>
+      <option value="Ortigas">Ortigas</option>
+      <option value="Shaw Boulevard">Shaw Boulevard</option>
+      <option value="Boni">Boni</option>
+      <option value="Guadalupe">Guadalupe</option>
+      <option value="Buendia">Buendia</option>
+      <option value="Ayala">Ayala</option>
+      <option value="Magallanes">Magallanes</option>
+      <option value="Taft Ave">Taft Ave</option>
+      <option value="Edsa">Edsa</option>
+  </select>
+</div>     
+<label for="desired_station" class="form-label">Desired Station</label>
+<select class="form-select mb-3" id="desired_station" name="desired_station">
+  <option value="Choose Station">Choose Station</option>
+      <!-- Add LRT 2 stations -->
+      <option value="Recto">Recto</option>
+      <option value="Legarda">Legarda</option>
+      <option value="Pureza">Pureza</option>
+      <option value="V. Mapa">V. Mapa</option>
+      <option value="J. Ruiz">J. Ruiz</option>
+      <option value="Gilmore">Gilmore</option>
+      <option value="Betty Go">Betty Go</option>
+      <option value="Cubao LRT Line">Cubao LRT Line</option>
+      <option value="Anonas">Anonas</option>
+      <option value="Katipunan">Katipunan</option>
+      <option value="Santolan">Santolan</option>
+      <option value="Marikina Pasig">Marikina Pasig</option>
+      <option value="Antipolo">Antipolo</option>
+      <!-- Add LRT 1 stations -->
+      <option value="Baclaran">Baclaran</option>
+      <option value="Edsa">Edsa</option>
+      <option value="Libertad">Libertad</option>
+      <option value="Gil Puyat">Gil Puyat</option>
+      <option value="Vito Cruz">Vito Cruz</option>
+      <option value="Quirino">Quirino</option>
+      <option value="Pedro Gil">Pedro Gil</option>
+      <option value="United Nations Avenue">United Nations Avenue</option>
+      <option value="Central Terminal">Central Terminal</option>
+      <option value="Carriedo">Carriedo</option>
+      <option value="Doroteo Jose">Doroteo Jose</option>
+      <option value="Bambang">Bambang</option>
+      <option value="Tayuman">Tayuman</option>
+      <option value="Blumentritt">Blumentritt</option>
+      <option value="Abad Santos">Abad Santos</option>
+      <option value="R. Papa">R. Papa</option>
+      <option value="5th Avenue">5th Avenue</option>
+      <option value="Monumento">Monumento</option>
+      <option value="Balintawak">Balintawak</option>
+      <option value="Roosevelt">Roosevelt</option>
+      <!-- Add MRT stations -->
+      <option value="North Ave">North Ave</option>
+      <option value="Quezon Ave">Quezon Ave</option>
+      <option value="GMAKamuning">GMAKamuning</option>
+      <option value="Cubao MRT Line">Cubao MRT Line</option>
+      <option value="Santolan-Annapolis">Santolan-Annapolis</option>
+      <option value="Ortigas">Ortigas</option>
+      <option value="Shaw Boulevard">Shaw Boulevard</option>
+      <option value="Boni">Boni</option>
+      <option value="Guadalupe">Guadalupe</option>
+      <option value="Buendia">Buendia</option>
+      <option value="Ayala">Ayala</option>
+      <option value="Magallanes">Magallanes</option>
+      <option value="Taft Ave">Taft Ave</option>
+      <option value="Edsa">Edsa</option>
+</select>
+<input type="submit" value="Enter" class="try-it-button">
+      </form>
+<div class="result-container">
+    <div class="result-heading">Path:</div>
+        <ul class="route-list">
+          {% if result %}
+          <p class="Anim">{{ result }}</p>
+          <p class="Anim">{{ result1 }}</p>
+          <p class="Anim">{{ result2 }}</p>
+        
+        {% endif %}
+    </div>
+</div>
 <br>
 <br>
-{% if result %}
-  <p class="Anim">{{ result }}</p>
-  <p class="Anim">{{ result1 }}</p>
-  <p class="Anim">{{ result2 }}</p>
-
-{% endif %}
