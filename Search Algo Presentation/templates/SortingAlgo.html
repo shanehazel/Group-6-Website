@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Algorithms</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<header class="head">
+    <nav>
+        <img src="/static/spidong.png" class="logo">
+        <ul>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/profile">Profile</a></li>
+            <li><a href="/works">Works</a></li>
+        </ul>
+    </nav>
+</header>
+<body>
+    <div class="contact-container"><h2>Sorting Algorithm Selector</h2>
+        <form id="sortingForm" action="/sorting_algo" method="post">
+            <label for="algorithm">Select Sorting Algorithm: </label>
+            <select id="algorithm" name="algorithm">
+                <option value="bubble">Bubble Sort</option>
+                <option value="selection">Selection Sort</option>
+                <option value="insertion">Insertion Sort</option>
+                <option value="merge">Merge Sort</option>
+                <option value="quick">Quick Sort</option>
+            </select>
+            <br>
+            <label for="inputArray">Enter numbers (comma-separated): </label>
+            <input type="text" id="inputArray" name="inputArray" required>
+            
+            <button type="submit">Sort</button>
+        </form>
+        <hr>
+            <h2>Results</h2>
+            {% if result %}
+                <p>Sorted Array: {{ result|join(', ') }}</p>
+            {% endif %}
+            <hr>
+          
+    </div>
+</body>
+</html>

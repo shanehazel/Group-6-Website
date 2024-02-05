@@ -11,7 +11,11 @@ from ternary_search import ternary_search, ternary_search_wrapper
 from flask import Flask, render_template, request
 from InfixPostfix import infix_to_postfix  
 from graphMRT import Graph
-
+from bubble_sort_algo import bubble_sort
+from selection_sort_algo import selection_sort
+from insertion_sort_algo import insertion_sort
+from merge_sort_algo import merge_sort
+from quick_sort_algo import quick_sort
 
 app = Flask(__name__)
 
@@ -417,6 +421,36 @@ def graph_algo():
     
     return render_template('graph_mrt.html', result=note1, result1=note2, result2=note3)
 
+@app.route('/sorting_algo', methods=['GET', 'POST'])
+def sort():
+    if request.method == 'POST':
+        input_array = request.form.get('inputArray')
+
+        # Check if input_array is None or empty
+        if input_array is None or input_array.strip() == "":
+            return render_template('SortingAlgo.html', error_message="Please enter valid input.")
+
+        input_array = list(map(int, input_array.split(',')))
+
+        selected_algorithm = request.form.get('algorithm')
+
+        if selected_algorithm == 'bubble':
+            sorted_array = bubble_sort(input_array)
+        elif selected_algorithm == 'selection':
+            sorted_array = selection_sort(input_array)
+        elif selected_algorithm == 'insertion':
+            sorted_array = insertion_sort(input_array)
+        elif selected_algorithm == 'merge':
+            sorted_array = merge_sort(input_array)
+        elif selected_algorithm == 'quick':
+            sorted_array = quick_sort(input_array)
+        else:
+            sorted_array = input_array  # Default to the input array if no algorithm is selected
+
+        return render_template('SortingAlgo.html', result=sorted_array)
+
+    # If it's a GET request, render the initial page without any sorting results
+    return render_template('SortingAlgo.html')
 
 
 if __name__ == "__main__":
