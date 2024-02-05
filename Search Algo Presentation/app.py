@@ -215,12 +215,13 @@ def results():
 def infix_postfix():
     result = None
     steps = None
+    infix_expression = None
 
     if request.method == 'POST':
         infix_expression = request.form['infixExpression']
         result, steps = infix_to_postfix(infix_expression)
 
-    return render_template('infix_postfix.html', result=result, steps=steps)
+    return render_template('infix_postfix.html', result=result, steps=steps, infix_expression = infix_expression)
 
 
 @app.route('/queue_dequeue')
