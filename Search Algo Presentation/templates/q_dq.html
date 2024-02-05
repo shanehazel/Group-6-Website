@@ -21,11 +21,9 @@
 </header>
 <body>
     <div class="hero">
-    <section class="team">
+    <section class="content1">
       <br>
-      <br>
-      <br>
-      <div class="content">
+      <div  >
         <form action="/queue_dequeue" method="post" >
             <label for="inputString" class="Anim" >  Enter a string:     </label>
             <input type="text" id="inputString" name="inputString" placeholder="Enter any key">
@@ -38,7 +36,7 @@
             <br>
             <br>
             {% if Enqueue %}
-            <p class="Anim">Enqueue: {{ " \n ".join(Enqueue) }}</p>
+            <p class="Anim">Enqueue: {{ " >>> ".join(Enqueue) }}</p>
             {% endif %}
             {% if Dequeue %}
             <p class="Anim" > Dequeue: {{ Dequeue }}</p>

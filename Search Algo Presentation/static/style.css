@@ -261,8 +261,20 @@ nav ul li a:hover {
     flex-direction: column;
     padding-top: 200px;
     
+    
 
 
+}
+.team1{
+    position: absolute;
+    width: 100%;
+    background: radial-gradient(#65224c, #000000);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+    
 }
 
 .team-content{
