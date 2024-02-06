@@ -49,9 +49,9 @@ class Graph:
 # Creating a graph for MRT Line 3 and LRT Lines 1 and 2
 manila_graph = Graph()
 
-stations_mrt_line3 = ["North Avenue", "Quezon Avenue", "Kamuning", "Araneta Center-Cubao", "Santolan-Anapolis", "Ortigas", "Shaw Boulevard", "Boni", "Guadalupe", "Buendia", "Ayala", "Magallanes", "Taft Avenue"]
+stations_mrt_line3 = ["North Avenue", "Quezon Avenue", "Kamuning", "Araneta Center-Cubao MRT", "Santolan-Anapolis", "Ortigas", "Shaw Boulevard", "Boni", "Guadalupe", "Buendia", "Ayala", "Magallanes", "Taft Avenue"]
 stations_lrt_line1 = ["Roosevelt", "Balintawak", "Monumento", "5th Avenue", "R. Papa", "Abad Santos", "Blumentritt", "Tayuman", "Bambang", "D. Jose", "Carriedo", "Central Terminal", "United Nations", "Pedro Gil", "Quirino", "Vito Cruz", "Gil Puyat", "Libertad", "EDSA", "Baclaran"]
-stations_lrt_line2 = ["Recto", "Legarda", "Pureza", "V. Mapa", "J. Ruiz", "Gilmore", "Betty Go-Belmonte", "Araneta Center-Cubao", "Anonas", "Katipunan", "Santolan", "Marikina", "Antipolo"]
+stations_lrt_line2 = ["Recto", "Legarda", "Pureza", "V. Mapa", "J. Ruiz", "Gilmore", "Betty Go-Belmonte", "Araneta Center-Cubao LRT2", "Anonas", "Katipunan", "Santolan", "Marikina", "Antipolo"]
 
 for station in stations_mrt_line3 + stations_lrt_line1 + stations_lrt_line2:
     manila_graph.add_station(station, set())
@@ -59,8 +59,8 @@ for station in stations_mrt_line3 + stations_lrt_line1 + stations_lrt_line2:
 # MRT Line 3 connections
 manila_graph.add_connection("North Avenue", "Quezon Avenue", 1, {Graph.MRT_LINE_3})
 manila_graph.add_connection("Quezon Avenue", "Kamuning", 1, {Graph.MRT_LINE_3})
-manila_graph.add_connection("Kamuning", "Araneta Center-Cubao", 1, {Graph.MRT_LINE_3})
-manila_graph.add_connection("Araneta Center-Cubao", "Santolan-Anapolis", 1, {Graph.MRT_LINE_3})
+manila_graph.add_connection("Kamuning", "Araneta Center-Cubao MRT", 1, {Graph.MRT_LINE_3})
+manila_graph.add_connection("Araneta Center-Cubao MRT", "Santolan-Anapolis", 1, {Graph.MRT_LINE_3})
 manila_graph.add_connection("Santolan-Anapolis", "Ortigas", 1, {Graph.MRT_LINE_3})
 manila_graph.add_connection("Ortigas", "Shaw Boulevard", 1, {Graph.MRT_LINE_3})
 manila_graph.add_connection("Shaw Boulevard", "Boni", 1, {Graph.MRT_LINE_3})
@@ -98,12 +98,18 @@ manila_graph.add_connection("Pureza", "V. Mapa", 1, {Graph.LRT_LINE_2})
 manila_graph.add_connection("V. Mapa", "J. Ruiz", 1, {Graph.LRT_LINE_2})
 manila_graph.add_connection("J. Ruiz", "Gilmore", 1, {Graph.LRT_LINE_2})
 manila_graph.add_connection("Gilmore", "Betty Go-Belmonte", 1, {Graph.LRT_LINE_2})
-manila_graph.add_connection("Betty Go-Belmonte", "Araneta Center-Cubao", 1, {Graph.LRT_LINE_2})
-manila_graph.add_connection("Araneta Center-Cubao", "Anonas", 1, {Graph.LRT_LINE_2})
+manila_graph.add_connection("Betty Go-Belmonte", "Araneta Center-Cubao LRT2", 1, {Graph.LRT_LINE_2})
+manila_graph.add_connection("Araneta Center-Cubao LRT2", "Anonas", 1, {Graph.LRT_LINE_2})
 manila_graph.add_connection("Anonas", "Katipunan", 1, {Graph.LRT_LINE_2})
 manila_graph.add_connection("Katipunan", "Santolan", 1, {Graph.LRT_LINE_2})
 manila_graph.add_connection("Santolan", "Marikina", 1, {Graph.LRT_LINE_2})
 manila_graph.add_connection("Marikina", "Antipolo", 1, {Graph.LRT_LINE_2})
+
+# Additional connections based on corrections
+manila_graph.add_connection("Recto", "D. Jose", 1, {Graph.LRT_LINE_1, Graph.LRT_LINE_2})
+manila_graph.add_connection("D. Jose", "Carriedo", 1, {Graph.LRT_LINE_1})
+manila_graph.add_connection("Taft Avenue", "EDSA", 1, {Graph.MRT_LINE_3, Graph.LRT_LINE_1})
+manila_graph.add_connection("Araneta Center-Cubao MRT", "Araneta Center-Cubao LRT2", 1, {Graph.MRT_LINE_3, Graph.LRT_LINE_2})
 
 # Example of finding the shortest path
 start_station = "Boni"
@@ -132,3 +138,6 @@ if shortest_distance != float('inf'):
         print(f"Lines: Direct route - No transfer needed.")
 else:
     print(f"No path found from {start_station} to {end_station}")
+
+
+

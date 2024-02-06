@@ -1,4 +1,3 @@
-
 from flask import Flask, render_template, request
 import timeit
 from flask import Flask, request, jsonify, render_template
@@ -16,6 +15,8 @@ from selection_sort_algo import selection_sort
 from insertion_sort_algo import insertion_sort
 from merge_sort_algo import merge_sort
 from quick_sort_algo import quick_sort
+import time
+import timeit
 
 app = Flask(__name__)
 
@@ -217,6 +218,11 @@ def search():
 def results():
     return render_template('results.html')
 
+@app.route('/results1')
+def results1():
+    return render_template('results1.html')
+
+
 @app.route('/infix_postfix', methods=['GET', 'POST'])
 def infix_postfix():
     result = None
@@ -405,21 +411,21 @@ def graph_algo():
             if transfer_station:
                 note1 = f"Shortest distance from {start_station} to {end_station}: {shortest_distance} stations."
                 note2 = f"Shortest path: {shortest_path}"
-                note3 = f"Lines: Transfer from {' to '.join(lines_taken)} at {transfer_station}"
+              
     
                 
             else:
                 note1 = f"Shortest distance from {start_station} to {end_station}: {shortest_distance} stations."
                 note2 = f"Shortest path: {shortest_path}"
-                note3 = f"Lines: Direct route - No transfer needed."
+                
             
                 
         else:
             note1 = f"No path found from {start_station} to {end_station}"
             note2 = ""
-            note3 = ""
+            
     
-    return render_template('graph_mrt.html', result=note1, result1=note2, result2=note3)
+    return render_template('graph_mrt.html', result=note1, result1=note2)
 
 @app.route('/sorting_algo', methods=['GET', 'POST'])
 def sort():
@@ -434,6 +440,8 @@ def sort():
 
         selected_algorithm = request.form.get('algorithm')
 
+        start_time = time.time()
+
         if selected_algorithm == 'bubble':
             sorted_array = bubble_sort(input_array)
         elif selected_algorithm == 'selection':
@@ -447,7 +455,10 @@ def sort():
         else:
             sorted_array = input_array  # Default to the input array if no algorithm is selected
 
-        return render_template('SortingAlgo.html', result=sorted_array)
+        end_time = time.time()
+        elapsed_time = end_time - start_time
+
+        return render_template('SortingAlgo.html', result=sorted_array, elapsed_time=elapsed_time)
 
     # If it's a GET request, render the initial page without any sorting results
     return render_template('SortingAlgo.html')

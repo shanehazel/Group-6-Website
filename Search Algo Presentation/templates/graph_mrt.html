@@ -18,18 +18,27 @@
     </ul>
   </nav>
 </header>
+<nav class="content">
+  <img src="/static/Train Stations.jpg" class="train" alt="Philippine Train Map.png">
+</nav>
+<div class="content1">
 <form action="/graph_algo" method="post">
-    <label for="start_station">Enter a string:</label>
-    <input type="text" id="start_station" name="start_station" placeholder="Boni">
-    <label for="end_station">Enter a string:</label>
-    <input type="text" id="end_station" name="end_station" placeholder="Boni">
+    <label for="start_station">Starting Station:</label>
+    <input type="text" id="start_station" name="start_station" placeholder="Enter Station">
+    <label for="end_station">End Station:</label>
+    <input type="text" id="end_station" name="end_station" placeholder="Enter Station">
     <input type="submit" value="Enter" class="try-it-button">
 
 <br>
 <br>
+<hr>
 {% if result %}
   <p class="Anim">{{ result }}</p>
   <p class="Anim">{{ result1 }}</p>
-  <p class="Anim">{{ result2 }}</p>
-
 {% endif %}
+<hr>
+</div>
+
+
+
+

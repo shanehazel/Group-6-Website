@@ -111,3 +111,33 @@ manila_graph.add_connection("D. Jose", "Carriedo", 1, {Graph.LRT_LINE_1})
 manila_graph.add_connection("Taft Avenue", "EDSA", 1, {Graph.MRT_LINE_3, Graph.LRT_LINE_1})
 manila_graph.add_connection("Araneta Center-Cubao MRT", "Araneta Center-Cubao LRT2", 1, {Graph.MRT_LINE_3, Graph.LRT_LINE_2})
 
+# Example of finding the shortest path
+start_station = "Boni"
+end_station = "V. Mapa"
+shortest_distance, shortest_path, lines_taken = manila_graph.shortest_path(start_station, end_station)
+
+if shortest_distance != float('inf'):
+    transfer_station = None
+    
+    # Find the station where the transfer occurs
+    for i in range(len(shortest_path) - 1):
+        current_station = shortest_path[i]
+        next_station = shortest_path[i + 1]
+        if manila_graph.station_lines[current_station] != manila_graph.station_lines[next_station]:
+            transfer_station = next_station
+            break
+
+    # Print the result with the transfer station
+    if transfer_station:
+        print(f"Shortest distance from {start_station} to {end_station}: {shortest_distance} stations.")
+        print(f"Shortest path: {shortest_path}")
+        print(f"Lines: Transfer from {' to '.join(lines_taken)} at {transfer_station}")
+    else:
+        print(f"Shortest distance from {start_station} to {end_station}: {shortest_distance} stations.")
+        print(f"Shortest path: {shortest_path}")
+        print(f"Lines: Direct route - No transfer needed.")
+else:
+    print(f"No path found from {start_station} to {end_station}")
+
+
+

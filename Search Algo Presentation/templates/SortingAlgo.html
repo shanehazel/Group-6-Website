@@ -20,44 +20,37 @@
 </header>
 <body>
     <div class="hero">
-        <br>
-        <br>
-        <br>    
-        <section class="team">
-            <br>
-            <br>
-            <br>
-            <section class="team">
-                <div class="content">
-                    <h2>Sorting Algorithm Selector</h2>
-                        <form id="sortingForm" action="/sorting_algo" method="post">
-                            <label for="algorithm">Select Sorting Algorithm: </label>
-                            <select id="algorithm" name="algorithm" class="form-label">
-                                <option value="bubble">Bubble Sort</option>
-                                <option value="selection">Selection Sort</option>
-                                <option value="insertion">Insertion Sort</option>
-                                <option value="merge">Merge Sort</option>
-                                <option value="quick">Quick Sort</option>
-                            </select>
-                            <br>
-                            <label for="inputArray">Enter numbers (comma-separated): </label>
-                            <input type="text" id="inputArray" name="inputArray" required>
-                            
-                            <button type="submit" class="try-it-button">Sort</button>
-                        </form>
-                        <br>
-                        <br>
-                        <br>
-                        <div>
-                            <div>
-                                <div>
-                                    <hr>
-                                        <h2>Results</h2>
-                                        {% if result %}
-                                            <p>Sorted Array: {{ result|join(', ') }}</p>
-                                        {% endif %}
-                                        <hr>
-          
-    </div>
-</body>
-</html>
+        <div class="content">
+        <h2>Sorting Algorithm Selector</h2>
+            <form id="sortingForm" action="/sorting_algo" method="post">
+                <label for="algorithm">Select Sorting Algorithm: </label>
+                <select id="algorithm" name="algorithm" class="form-label">
+                    <option value="bubble">Bubble Sort</option>
+                    <option value="selection">Selection Sort</option>
+                    <option value="insertion">Insertion Sort</option>
+                    <option value="merge">Merge Sort</option>
+                    <option value="quick">Quick Sort</option>
+                </select>
+                <br>
+                <label for="inputArray">Enter numbers (comma-separated): </label>
+                <input type="text" id="inputArray" name="inputArray" required>
+                
+                <button type="submit" class="try-it-button">Sort</button>
+            </form>
+            
+            <div>
+                <div>
+                    <div>
+                        <hr>
+                        <h2>Results</h2>
+                        {% if result %}
+                            <p>Sorted Array: {{ result|join(', ') }}</p>
+                            <p>Time taken to sort: {{ "{:.0f}".format(elapsed_time) }} seconds</p>
+                        {% endif %}
+                        <hr>
+                        <a href="/results1" class="btn">Results and Discussions</a>
+                    </div>
+                </div>
+            </div>
+        </body>
+        </html>
