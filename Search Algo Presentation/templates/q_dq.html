@@ -20,41 +20,24 @@
   </nav>
 </header>
 <body>
-    <div class="content">
-      <br>
-      <div  >
-        <form action="/queue_dequeue" method="post" >
-            <label for="inputString" class="Anim" >  Enter a string:     </label>
-            <input type="text" id="inputString" name="inputString" placeholder="Enter any key">
-            <br>    
-            <br>
-            <br>
-            <input type="submit" id ="enequeue" name="enqueue" value="ENQUEUE"  class="try-it-button">
-            <input type="submit" id ="dequeue" name="dequeue" value="DEQUEUE"class="try-it-button">
-            </form>
-            <br>
-            <br>
-            {% if Enqueue %}
-            <p class="Anim">Enqueue: {{ " >>> ".join(Enqueue) }}</p>
-            {% endif %}
-            {% if Dequeue %}
-            <p class="Anim" > Dequeue: {{ Dequeue }}</p>
-            {% endif %}
-      </div>
+  <div class="content6">
+    <form action="/queue_dequeue" method="post" >
+      <label for="inputString" class="Anim" >  Enter a string:     </label>
+      <input type="text" id="inputString" name="inputString" placeholder="Enter any key">
+      <br>    
       <br>
       <br>
+      <input type="submit" id ="enequeue" name="enqueue" value="ENQUEUE"  class="try-it-button">
+      <input type="submit" id ="dequeue" name="dequeue" value="DEQUEUE"class="try-it-button">
+      </form>
       <br>
-      
-        <br>
-        <br>
-      </div>
-      
-    
-    
-    </div>
-    
-      
-      
-    </section>
-  </body>
+      <br>
+      {% if Enqueue %}
+      <p class="Anim">Enqueue: {{ " >>> ".join(Enqueue) }}</p>
+      {% endif %}
+      {% if Dequeue %}
+      <p class="Anim" > Dequeue: {{ Dequeue }}</p>
+      {% endif %}
+  </div>
+</body>
 

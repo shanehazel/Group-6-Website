@@ -20,48 +20,35 @@
     </nav>
 </header>
 <body>
-    <div class="hero">
+    <div class="content5">
+        <form action="/infix_postfix" method="post">
+            <label for="infixExpression">Enter an infix expression:</label>
+            <input type="text" id="infixExpression" name="infixExpression" placeholder="Enter infix expression">
+            <br>
+            <br>
+            <input type="submit" value="Convert to Postfix" class="try-it-button">
+        </form>
+        <!-- Display Infix to Postfix result or steps -->
         <br>
         <br>
-        <br>    
-        <section class="team">
-            <br>
-            <br>
-            <br>
-            <section class="team">
-                <div class="content">
-                    <form action="/infix_postfix" method="post">
-                        <label for="infixExpression">Enter an infix expression:</label>
-                        <input type="text" id="infixExpression" name="infixExpression" placeholder="Enter infix expression">
-                        <br>
-                        <br>
-                        <input type="submit" value="Convert to Postfix" class="try-it-button">
-                    </form>
-                    <!-- Display Infix to Postfix result or steps -->
-                    <br>
-                    <br>
+        <div>
+            <div>
+                <div>
                     <div>
-                        <div>
-                            <div>
-                                <div>
-                                    <p>Infix Expression: </p>
-                                    <p> {{infix_expression}}</p>
-                                    <br>
-                                    {% if result %}
-                                    <p>Converted Postfix Expression: {{ result }}</p>
-                                    {% endif %}
-                                    {% if steps %}
-                                    <p>Conversion Steps:</p>
-                                    {% for step in steps %}
-                                        <p>{{ step }}</p>
-                                    {% endfor %}
-                                    {% endif %}
-                                </div>
-                            </div>
-                        </div>
+                        <p>Infix Expression: </p>
+                        <p> {{infix_expression}}</p>
+                        <br>
+                        {% if result %}
+                        <p>Converted Postfix Expression: {{ result }}</p>
+                        {% endif %}
+                        {% if steps %}
+                        <p>Conversion Steps:</p>
+                        {% for step in steps %}
+                            <p>{{ step }}</p>
+                        {% endfor %}
+                        {% endif %}
                     </div>
                 </div>
-            </section>
+            </div>
         </div>
-    </body>
-</html>
+</body>

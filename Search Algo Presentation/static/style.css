@@ -109,7 +109,7 @@ nav ul li a:hover {
     font-weight: bold;
     /* add this 3 */
     position: absolute;
-    top: 59%;
+    
     left: 50%;
     transform: translate(-50%, -50%);
     flex-direction: column;
@@ -177,6 +177,74 @@ nav ul li a:hover {
     left: 50px;
     right: 50px;
 }
+
+.content5{ 
+    background-color: #e672b63e;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0.2);
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    /* add this 3 */
+    position: absolute;
+    top: 59%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    flex-direction: column;
+} 
+
+.content6{ 
+    background-color: #e672b63e;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0.2);
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    /* add this 3 */
+    position: absolute;
+    top: 59%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    flex-direction: column;
+} 
+
+.content7{ 
+    background-color: #e672b63e;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0.2);
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    /* add this 3 */
+    position: absolute;
+    top: 59%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    flex-direction: column;
+} 
+
+.content8{ 
+    background-color: #e672b63e;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0.2);
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    /* add this 3 */
+    position: absolute;
+    top: 59%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    flex-direction: column;
+} 
 .train{
     width: 500px;
     height: 500px;

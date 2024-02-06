@@ -19,12 +19,11 @@
     </nav>
 </header>
 <body>
-    <div class="hero">
-        <div class="content">
+    <div class="content8">
         <h2>Sorting Algorithm Selector</h2>
             <form id="sortingForm" action="/sorting_algo" method="post">
                 <label for="algorithm">Select Sorting Algorithm: </label>
-                <select id="algorithm" name="algorithm" class="form-label">
+                <select id="algorithm" name="algorithm">
                     <option value="bubble">Bubble Sort</option>
                     <option value="selection">Selection Sort</option>
                     <option value="insertion">Insertion Sort</option>
@@ -45,12 +44,11 @@
                         <h2>Results</h2>
                         {% if result %}
                             <p>Sorted Array: {{ result|join(', ') }}</p>
-                            <p>Time taken to sort: {{ "{:.0f}".format(elapsed_time) }} seconds</p>
+                            <p>Time taken to sort: {{ "{:.2f}".format(elapsed_time) }} seconds</p>
                         {% endif %}
                         <hr>
                         <a href="/results1" class="btn">Results and Discussions</a>
                     </div>
                 </div>
             </div>
-        </body>
-        </html>
+</body>
