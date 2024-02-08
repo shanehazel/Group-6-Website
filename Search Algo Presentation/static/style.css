@@ -519,16 +519,9 @@ body {
 }
 
 .try-it-button:hover {
-    display: inline-block;
-    text-decoration: none;
-    padding: 14px 40px;
-    color:#ffffff;
+    padding: 10px 20px; /* Maintain the original padding */
+    font-size: 18px; /* Maintain the original font size */
     background-image: linear-gradient(45deg, rgb(226, 70, 70),rgb(158, 6, 6));
-    font-size: larger;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    border-radius:  30px;
-    border-top-right-radius: 0;
-    transition: 0.5s;
 }
 
 @media (max-width: 1240px) {
