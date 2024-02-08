@@ -44,7 +44,7 @@
                         <h2>Results</h2>
                         {% if result %}
                             <p>Sorted Array: {{ result|join(', ') }}</p>
-                            <p>Time taken to sort: {{ "{:.2f}".format(elapsed_time) }} seconds</p>
+                            <p>Time taken to sort: {{ "{:.15f}".format(elapsed_time) }} seconds</p>
                         {% endif %}
                         <hr>
                         <a href="/results1" class="btn">Results and Discussions</a>

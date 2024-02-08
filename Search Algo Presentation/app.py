@@ -418,21 +418,19 @@ def graph_algo():
                 note1 = f"Shortest distance from {start_station} to {end_station}: {shortest_distance} stations."
                 note2 = f"Shortest path: {shortest_path}"
                 
-            
-                
         else:
             note1 = f"No path found from {start_station} to {end_station}"
             note2 = ""
             
-    
     return render_template('graph_mrt.html', result=note1, result1=note2)
+
 
 @app.route('/sorting_algo', methods=['GET', 'POST'])
 def sort():
     if request.method == 'POST':
         input_array = request.form.get('inputArray')
 
-        # Check if input_array is None or empty
+        
         if input_array is None or input_array.strip() == "":
             return render_template('SortingAlgo.html', error_message="Please enter valid input.")
 
@@ -440,27 +438,33 @@ def sort():
 
         selected_algorithm = request.form.get('algorithm')
 
-        start_time = time.time()
+        total_time = 0
+        num_iterations = 10  
 
-        if selected_algorithm == 'bubble':
-            sorted_array = bubble_sort(input_array)
-        elif selected_algorithm == 'selection':
-            sorted_array = selection_sort(input_array)
-        elif selected_algorithm == 'insertion':
-            sorted_array = insertion_sort(input_array)
-        elif selected_algorithm == 'merge':
-            sorted_array = merge_sort(input_array)
-        elif selected_algorithm == 'quick':
-            sorted_array = quick_sort(input_array)
-        else:
-            sorted_array = input_array  # Default to the input array if no algorithm is selected
+        for _ in range(num_iterations):
+            start_time = time.time()
 
-        end_time = time.time()
-        elapsed_time = end_time - start_time
+            if selected_algorithm == 'bubble':
+                sorted_array = bubble_sort(input_array)
+            elif selected_algorithm == 'selection':
+                sorted_array = selection_sort(input_array)
+            elif selected_algorithm == 'insertion':
+                sorted_array = insertion_sort(input_array)
+            elif selected_algorithm == 'merge':
+                sorted_array = merge_sort(input_array)
+            elif selected_algorithm == 'quick':
+                sorted_array = quick_sort(input_array)
+            else:
+                sorted_array = input_array 
+
+            end_time = time.time()
+            total_time += end_time - start_time
+
+        elapsed_time = total_time / num_iterations  
 
         return render_template('SortingAlgo.html', result=sorted_array, elapsed_time=elapsed_time)
 
-    # If it's a GET request, render the initial page without any sorting results
+
     return render_template('SortingAlgo.html')
 
 
